@@ -4,16 +4,16 @@ import InputField from "./InputField";
 import FuncButton from "./FuncButton";
 import {getData, storeData} from "../screens/HomeScreen";
 
+
 const LoginFetch = async (username, password) => {
     try {
-        return fetch("http://83.249.74.226:8080/user/update", {
+        return fetch("http://213.100.195.78:8080/user/update", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({username, password}),
         }).then((response) => response.json())
-
     } catch (e) {
         console.error(e);
     }
@@ -21,7 +21,7 @@ const LoginFetch = async (username, password) => {
 
 const RegisterFetch = async (username, password) => {
     try {
-        return fetch("http://83.249.74.226:8080/user/add", {
+        return fetch("http://213.100.195.78:8080/user/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +29,6 @@ const RegisterFetch = async (username, password) => {
             },
             body: JSON.stringify({username, password}),
         }).then((response) => response.json())
-
     } catch (e) {
         console.error(e);
     }
@@ -37,8 +36,8 @@ const RegisterFetch = async (username, password) => {
 
 const LoginBox = () => {
 
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
         await LoginFetch(username, password)
@@ -47,7 +46,7 @@ const LoginBox = () => {
                     storeData('token', res.token);
                     storeData('username', res.username);
                     setPassword('');
-                    setUsername(`Wellcome ${res.username}!!`)
+                    setUsername(`Wellcome ${res.username}!!`);
                     setTimeout(() => setUsername(''), 1500);
                 }
             });
@@ -58,11 +57,11 @@ const LoginBox = () => {
             .then((res) => {
                 if (res === true) {
                     setUsername('SUCCESS');
-                    setPassword('')
+                    setPassword('');
                     setTimeout(() => setUsername(''), 1500);
                 }
-            })
-    }
+            });
+    };
 
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>

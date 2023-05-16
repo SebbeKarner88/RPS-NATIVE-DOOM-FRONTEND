@@ -7,7 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const getToken = async () => {
     try {
-        const response = await fetch('http://83.249.74.226:8080/user/token');
+        const response = await fetch('http://213.100.195.78:8080/user/token');
         const json = await response.json();
         return json.toString();
     } catch (error) {
@@ -38,8 +38,9 @@ const HomeScreen = ({navigation}) => {
 
 
     useEffect(() => {
-        getToken().then(token => {
-           storeData('token', token);
+       getToken().then( token => {
+           storeData('token', token)
+               .then();
         })
     }, []);
 

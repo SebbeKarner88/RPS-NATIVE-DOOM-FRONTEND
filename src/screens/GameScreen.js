@@ -1,14 +1,80 @@
-import React from 'react';
-import {View, Dimensions, ImageBackground, StyleSheet, TouchableOpacity, Text} from "react-native";
+import React, {useEffect, useState} from 'react';
+import {View, Dimensions, ImageBackground, StyleSheet, TouchableOpacity, FlatList} from "react-native";
 import Header from "../components/Header";
 import GameButton from "../components/GameButton";
 import TitleBox from "../components/TitleBox";
+import {getData, storeData} from "./HomeScreen";
+import GameBox from "../components/GameBox";
+import RefreshButton from "../components/RefreshButton";
+
+const JoinGameFetch = async (gameId) => {
+    try {
+        return fetch("http://213.100.195.78:8080/games/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                token: await getData('token'),
+                gameId: gameId,
+            },
+        })
+            .then((response) => response.json())
+    }catch (e) {
+        console.log(e.message)
+    }
+}
+
+const CreateGameFetch = async () => {
+    try {
+        return fetch("http://213.100.195.78:8080/games/create", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                token: await getData('token'),
+            },
+        })
+            .then((response) => response.json())
+    }catch (e) {
+    }
+}
+
+const OpenGamesFetch = async () => {
+    try {
+        return fetch("http://213.100.195.78:8080/games", {
+            method: "GET",
+        })
+            .then((response) => response.json())
+    }catch (e) {
+    }
+}
 
 const GameScreen = ({navigation}) => {
 
-    const handleStartGame = () => {
-        console.log('2p!')
+    const [refreshGames, setRefreshGames] = useState(false);
+    const [openGames, setOpenGames] = useState([]);
+
+    const handleStartGame = async () => {
+        await CreateGameFetch()
+            .then( (res) => {
+                storeData('gameId', res.gameStatusId);
+                navigation.navigate('GameBoard');
+            })
     };
+
+    const handleJoin = async (gameId) => {
+        await JoinGameFetch(gameId)
+            .then(() => {
+                storeData('gameId',gameId);
+                navigation.navigate('GameBoard');
+            });
+    };
+
+    useEffect(() => {
+         OpenGamesFetch()
+            .then((game) => {
+                setOpenGames(game);
+            })
+            .catch((err) => console.log(err.message))
+    }, [refreshGames]);
 
 
     return (
@@ -34,9 +100,18 @@ const GameScreen = ({navigation}) => {
                 </View>
 
                 <TitleBox title={'Join Game'}/>
+                <TouchableOpacity onPress={() => setRefreshGames(!refreshGames)}>
+                    <RefreshButton title={'Refresh'}/>
+                </TouchableOpacity>
 
                 <View style={{height: 300}}>
-                    <Text>Här kommer vi mappa öppna spel!</Text>
+
+                    <FlatList
+                        data={openGames}
+                        keyExtractor={item => item.gameStatusId}
+                        renderItem={({item}) =>
+                            <GameBox opponent={item.playerOne.username} joinGame={() => handleJoin(item.gameStatusId)}/>
+                    }/>
                 </View>
             </View>
         </ImageBackground>
