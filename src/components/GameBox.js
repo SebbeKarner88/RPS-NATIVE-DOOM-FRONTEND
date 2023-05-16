@@ -19,7 +19,7 @@ const GameBox = ({opponent, joinGame}) => {
                     <TouchableOpacity onPress={joinGame}>
                         <Text
                             style={styles.button}>
-                            Join Game
+                            Join
                         </Text>
                     </TouchableOpacity>
 
