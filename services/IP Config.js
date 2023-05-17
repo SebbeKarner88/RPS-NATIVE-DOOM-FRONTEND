@@ -1,5 +1,9 @@
 import React from "react";
 
-const IP_BASEURL = 'http://83.251.147.160:8080'
+// Change this to your local Ipv4 adress!
+
+const IP = '83.251.147.160'
+
+const IP_BASEURL = 'http://' + IP + ':8080'
 
 export default IP_BASEURL;
