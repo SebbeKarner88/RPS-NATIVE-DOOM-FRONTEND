@@ -3,11 +3,11 @@ import {Dimensions, ImageBackground, View} from "react-native";
 import Header from '../components/Header';
 import ReactLogo from "../components/ReactLogo";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import IP_BASEURL from "../../services/IP Config";
 
 const getToken = async () => {
     try {
-        const response = await fetch('http://213.100.195.78:8080/user/token');
+        const response = await fetch(IP_BASEURL + '/user/token');
         const json = await response.json();
         return json.toString();
     } catch (error) {

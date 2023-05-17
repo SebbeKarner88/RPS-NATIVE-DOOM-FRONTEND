@@ -3,11 +3,12 @@ import {Dimensions, Keyboard, StyleSheet, TouchableWithoutFeedback, View} from "
 import InputField from "./InputField";
 import FuncButton from "./FuncButton";
 import {getData, storeData} from "../screens/HomeScreen";
+import IP_BASEURL from "../../services/IP Config";
 
 
 const LoginFetch = async (username, password) => {
     try {
-        return fetch("http://213.100.195.78:8080/user/update", {
+        return fetch(IP_BASEURL + '/user/update', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -21,7 +22,7 @@ const LoginFetch = async (username, password) => {
 
 const RegisterFetch = async (username, password) => {
     try {
-        return fetch("http://213.100.195.78:8080/user/add", {
+        return fetch(IP_BASEURL + '/user/add', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

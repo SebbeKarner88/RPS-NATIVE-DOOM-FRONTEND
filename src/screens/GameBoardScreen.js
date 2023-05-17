@@ -5,10 +5,11 @@ import TitleBox from "../components/TitleBox";
 import GameButton from "../components/GameButton";
 import Card from "../components/Card";
 import {getData} from "./HomeScreen";
+import IP_BASEURL from "../../services/IP Config";
 
 const GameStatusFetch = async () => {
     try {
-        return fetch("http://213.100.195.78:8080/games/gameID", {
+        return fetch(IP_BASEURL + '/games/gameID', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -24,7 +25,7 @@ const GameStatusFetch = async () => {
 
 const MakeMoveFetch = async (sign) => {
     try {
-        return fetch("http://213.100.195.78:8080/games/update", {
+        return fetch(IP_BASEURL + '/games/update', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

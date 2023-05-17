@@ -31,8 +31,10 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'rgba(0,0,0,0.54)',
         borderBottomColor: 'rgb(96,197,229)',
+        borderTopColor: 'rgba(96,197,229,0.68)',
         borderStyle: 'solid',
         borderBottomWidth: 2,
+        borderTopWidth: 2,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',

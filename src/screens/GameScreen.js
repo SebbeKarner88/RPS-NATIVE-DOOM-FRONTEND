@@ -6,10 +6,11 @@ import TitleBox from "../components/TitleBox";
 import {getData, storeData} from "./HomeScreen";
 import GameBox from "../components/GameBox";
 import RefreshButton from "../components/RefreshButton";
+import IP_BASEURL from "../../services/IP Config";
 
 const JoinGameFetch = async (gameId) => {
     try {
-        return fetch("http://213.100.195.78:8080/games/add", {
+        return fetch(IP_BASEURL + '/games/add', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -25,7 +26,7 @@ const JoinGameFetch = async (gameId) => {
 
 const CreateGameFetch = async () => {
     try {
-        return fetch("http://213.100.195.78:8080/games/create", {
+        return fetch(IP_BASEURL + '/games/create', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +40,7 @@ const CreateGameFetch = async () => {
 
 const OpenGamesFetch = async () => {
     try {
-        return fetch("http://213.100.195.78:8080/games", {
+        return fetch(IP_BASEURL + '/games', {
             method: "GET",
         })
             .then((response) => response.json())

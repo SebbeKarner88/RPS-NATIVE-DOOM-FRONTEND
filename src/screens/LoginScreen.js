@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import TitleBox from "../components/TitleBox";
 import NameAgeBox from "../components/LoginBox";
 
+
 const LoginScreen = ({navigation}) => {
 
     return (
