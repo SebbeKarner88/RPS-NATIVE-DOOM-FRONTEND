@@ -20,6 +20,7 @@ const HeaderLogo = ({navigation, path}) => {
 const styles = StyleSheet.create({
     logo: {
         backgroundColor: "#fff",
+        marginTop: 30,
         marginLeft: 10,
         borderRadius: 5,
         borderStyle: 'solid',

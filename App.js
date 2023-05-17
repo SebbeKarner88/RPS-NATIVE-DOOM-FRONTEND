@@ -17,17 +17,19 @@ const navigator = createStackNavigator(
     {
         initialRouteName: "Home",
         defaultNavigationOptions: {
-            title: "Rock Paper Scissors",
-            headerStyle: {
-                backgroundColor: "rgb(0,0,0)",
-            },
-            headerTitleStyle: {
-                fontSize: 25,
-                color: "#71c6e1",
-                fontWeight: "bold",
-            },
+            headerShown: false,
         },
     }
 );
 
 export default createAppContainer(navigator);
+
+//title: "Rock Paper Scissors",
+//             headerStyle: {
+//                 backgroundColor: "rgb(0,0,0)",
+//             },
+//             headerTitleStyle: {
+//                 fontSize: 25,
+//                 color: "#71c6e1",
+//                 fontWeight: "bold",
+//             },

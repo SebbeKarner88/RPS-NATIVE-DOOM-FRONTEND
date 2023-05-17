@@ -11,9 +11,11 @@ const Header = ({navigation}) => {
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
             <View
-                height={100}
+                height={130}
                 style={styles.container}>
-                <HeaderLogo navigation={navigation} path={'Home'}/>
+                <HeaderLogo
+                    style={styles.logo}
+                    navigation={navigation} path={'Home'}/>
 
                 <View
                     style={styles.navbar}>
@@ -31,21 +33,20 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'rgba(0,0,0,0.54)',
         borderBottomColor: 'rgb(96,197,229)',
-        borderTopColor: 'rgba(96,197,229,0.68)',
         borderStyle: 'solid',
         borderBottomWidth: 2,
-        borderTopWidth: 2,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
     navbar: {
+        marginTop: 30,
         flex: 1,
         flexDirection: 'row',
         maxWidth: 200,
         marginRight: 20,
         justifyContent: 'space-between',
-    },
+    }
 });
 
 export default Header;
