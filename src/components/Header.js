@@ -6,7 +6,22 @@ import ModalPopup from "./ModalPopup";
 
 const Header = ({navigation}) => {
 
-    const modalText = 'About us text...'
+    const modalText = `This App is created by: 
+
+Sebastian Kärner, a student at EC Education in Stockholm, Sweden.
+    
+The App uses React Native/Js frontend with a Spring BOOT backend and a Postgres DB.
+
+Created as part of a school assignment for our App-Development course.
+
+Contact: 
+
+Sebastian Kärner
+Hyggesbacken 8
+142 52 Skogas
+Sweden
+Tel: +46704740512
+`
 
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>

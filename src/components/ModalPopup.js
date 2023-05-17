@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         width: Dimensions.get('window').width - 50,
         height: 'auto',
-        padding: 20,
+        padding: 25,
         borderRadius: 15,
         borderStyle: 'solid',
         borderColor: '#60c5e5',
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     },
     modText: {
         marginBottom: 15,
-        textAlign: 'center',
+        textAlign: 'left',
         color: 'white',
         fontSize: 18
     },
