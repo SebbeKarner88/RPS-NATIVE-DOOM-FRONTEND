@@ -1,7 +1,7 @@
 import React from "react";
 import {Text, TextInput, StyleSheet, View} from "react-native";
 
-const InputField = ({title, keyType, value, setValue}) => {
+const InputField = ({title, keyType, value, setValue, encrypted}) => {
 
     return (
         <View style={{alignItems: 'center'}}>
@@ -10,6 +10,8 @@ const InputField = ({title, keyType, value, setValue}) => {
                 style={styles.input}
                 placeholder='input...'
                 keyboardType={keyType}
+                secureTextEntry={encrypted}
+                autoCapitalize='none'
                 placeholderTextColor={'rgba(255,255,255,0.45)'}
                 onChangeText={(value) => setValue(value)}
                 value={value}

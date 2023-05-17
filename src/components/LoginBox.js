@@ -71,11 +71,13 @@ const LoginBox = () => {
                     <InputField
                         title='Enter your Username'
                         keyType={'default'}
+                        encrypted={false}
                         value={username}
                         setValue={setUsername}/>
                     <InputField
                         title='Enter your password'
                         keyType={'default'}
+                        encrypted={true}
                         value={password}
                         setValue={setPassword}/>
                     {username !== '' && password !== ''
