@@ -27,8 +27,7 @@ export const storeData = async (key, value) => {
 
 export const getData = async (key) => {
     try {
-        const res = await AsyncStorage.getItem(key);
-        return res;
+        return await AsyncStorage.getItem(key);
     } catch(e) {
         console.log(e.message())
     }
