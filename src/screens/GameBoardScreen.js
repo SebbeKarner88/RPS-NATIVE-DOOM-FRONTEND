@@ -23,13 +23,13 @@ const GameStatusFetch = async () => {
     }
 }
 
-const MakeMoveFetch = async (sign) => {
+const MakeMoveFetch = async (token, sign) => {
     try {
         return fetch(IP_BASEURL + '/games/update', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                token: await getData('token'),
+                token: token,
                 gameId: await getData('gameId'),
                 sign: sign
             },
@@ -49,6 +49,8 @@ const GameBoardScreen = ({navigation}) => {
     const [playerMove, setPlayerMove] = useState('');
     const [result, setResult] = useState('');
     const [timer, setTimer] = useState(30);
+    const [madeMove, setMadeMove] = useState(false);
+
     let time = 30;
 
     useEffect(() => {
@@ -95,15 +97,14 @@ const GameBoardScreen = ({navigation}) => {
                         clearInterval(newInterval);
                     }
                 })
-
             }, 1000)
         }
     }, [opponent]);
 
-    const HandleMove = async (move) => {
-        await MakeMoveFetch(move)
+    const HandleMove = async (token, move) => {
+        await MakeMoveFetch(token, move)
             .then(async () => console.log('Made move!!!'));
-    }
+    };
 
     return (
         <ImageBackground
@@ -117,10 +118,23 @@ const GameBoardScreen = ({navigation}) => {
                 <View>
                     <TitleBox title={result ? oppMove : opponent}/>
                     <GameButton title={timer}/>
+                    <View height={150}>
+
+                    </View>
                     <View style={styles.cardBox}>
-                        {result ? null : <Card title={'ROCK'} handleMove={() => HandleMove('rock')}/>}
-                        <Card title={result ? playerMove : 'PAPER'} handleMove={() => HandleMove('paper')}/>
-                        {result ? null : <Card title={'SCISSORS'} handleMove={() => HandleMove('scissors')}/>}
+                        {result ? null :
+                            <Card title={'ROCK'}
+                                  handleMove={async () => {HandleMove(await getData('token'), 'rock')
+                                  }}/>}
+
+                        <Card title={result ? playerMove : 'PAPER'}
+                              handleMove={async () => {HandleMove(await getData('token'), 'paper')
+                              }}/>
+
+                        {result ? null :
+                            <Card title={'SCISSORS'}
+                                  handleMove={async () => {HandleMove(await getData('token'), 'scissors')
+                                  }}/>}
                     </View>
                 </View>
                 <TitleBox title={result ? result : player}/>
@@ -139,3 +153,45 @@ const styles = StyleSheet.create({
 });
 
 export default GameBoardScreen;
+
+
+//const handleNoMove = async () => {
+//         GameStatusFetch
+//             .then(async (res) => {
+//                 await MakeMoveFetch(res.playerTwo.userId, 'rock');
+//                 await MakeMoveFetch(res.playerOne.userId, 'rock');
+//             });
+//     }
+//         const handleOneMove = async (move, id) => {
+//             await GameStatusFetch.then(async (res) => {
+//                 switch (id) {
+//                     case res.playerOne.userId:
+//                         switch (move) {
+//                             case 'ROCK':
+//                                 await MakeMoveFetch(id, 'scissors');
+//                                 break;
+//                             case 'PAPER':
+//                                 await MakeMoveFetch(id, 'rock');
+//                                 break;
+//                             case 'SCISSORS':
+//                                 await MakeMoveFetch(id, 'paper');
+//                                 break;
+//                         }
+//                         break;
+//
+//                     case res.playerTwo.userId:
+//                         switch (move) {
+//                             case 'ROCK':
+//                                 await MakeMoveFetch(id, 'scissors');
+//                                 break;
+//                             case 'PAPER':
+//                                 await MakeMoveFetch(id, 'rock');
+//                                 break;
+//                             case 'SCISSORS':
+//                                 await MakeMoveFetch(id, 'paper');
+//                                 break;
+//                         }
+//                         break;
+//                 }
+//             });
+//         };
