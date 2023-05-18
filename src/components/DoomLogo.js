@@ -9,10 +9,10 @@ const DoomLogo = () => {
                 style={[styles.image, styles.shadow]}
                 source={require('../../assets/Doom-logo-big.png')}
             />
-            <View height={Dimensions.get('window').height * 0.25}></View>
+            <View height={Dimensions.get('window').height * 0.26}></View>
             <Image
-                style={[styles.shadow, styles.logo]}
-                source={require('../../assets/RPS-logo-grey.png')}
+                style={[styles.logo]}
+                source={require('../../assets/RPS-gradient.png')}
             />
 
         </View>
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
         color: 'rgba(255,255,255,0.89)'
     },
     logo: {
-      height: 90,
-        width: 120,
+        height: 80,
+        width: 150,
         overflow: "visible"
     },
     shadow: {
