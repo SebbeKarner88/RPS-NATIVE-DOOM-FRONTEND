@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {Dimensions, ImageBackground, View} from "react-native";
 import {useFonts} from "expo-font";
+import AppLoading from 'expo-app-loading';
 import Header from '../components/Header';
-import ReactLogo from "../components/ReactLogo";
+import DoomLogo from "../components/DoomLogo";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import IP_BASEURL from "../../services/IP Config";
 
@@ -42,8 +43,6 @@ const HomeScreen = ({navigation}) => {
         EternalUiRegular: require('../../assets/fonts/EternalUiRegular.ttf')
     });
 
-
-
     useEffect(() => {
        getToken().then( token => {
            storeData('token', token)
@@ -61,14 +60,12 @@ if (loaded) {
             source={require('../../assets/Doom-background.webp')}>
             <View>
                 <Header navigation={navigation}/>
-                <ReactLogo/>
+                <DoomLogo/>
             </View>
         </ImageBackground>
     )
-}
-else{
+} else {
     return null;
-}
-};
+}};
 
 export default HomeScreen;

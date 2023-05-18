@@ -1,7 +1,7 @@
 import React from "react";
-import {Image, Text, View, StyleSheet, Dimensions} from "react-native";
+import {Image, View, StyleSheet, Dimensions} from "react-native";
 
-const ReactLogo = () => {
+const DoomLogo = () => {
 
     return (
         <View style={{alignItems: 'center'}}>
@@ -9,10 +9,10 @@ const ReactLogo = () => {
                 style={[styles.image, styles.shadow]}
                 source={require('../../assets/Doom-logo-big.png')}
             />
-            <View height={Dimensions.get('window').height * 0.26}></View>
+            <View height={Dimensions.get('window').height * 0.25}></View>
             <Image
-                style={[styles.shadow, styles.rpsLogo]}
-                source={require('../../assets/RPS-logo-darker.png')}
+                style={[styles.shadow, styles.logo]}
+                source={require('../../assets/RPS-logo-grey.png')}
             />
 
         </View>
@@ -32,6 +32,11 @@ const styles = StyleSheet.create({
         fontFamily: 'EternalBattleBold',
         color: 'rgba(255,255,255,0.89)'
     },
+    logo: {
+      height: 90,
+        width: 120,
+        overflow: "visible"
+    },
     shadow: {
         shadowColor: '#000000',
         shadowOffset: {
@@ -40,8 +45,8 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 1,
-        overflow: 'visible'
+
     }
 });
 
-export default ReactLogo;
+export default DoomLogo;
