@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 15,
         borderStyle: 'solid',
-        borderColor: '#60c5e5',
+        borderColor: '#d20000',
         borderWidth: 2,
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 30,
-        fontWeight: 'bold',
-        color: '#60c5e5',
+        fontFamily: 'EternalBattleBold',
+        color: '#606060',
         letterSpacing: 1.5
 
     }

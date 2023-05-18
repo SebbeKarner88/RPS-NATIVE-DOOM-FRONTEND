@@ -15,9 +15,9 @@ const FuncButton = ({label, func}) => {
 const styles = StyleSheet.create({
     button: {
         margin: 15,
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#5fc4e4',
+        fontSize: 22,
+        fontFamily: 'EternalBattleBold',
+        color: '#d20000',
         shadowColor: '#000',
         shadowOffset: {
             width: 4,

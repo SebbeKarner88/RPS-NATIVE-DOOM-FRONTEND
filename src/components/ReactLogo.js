@@ -1,5 +1,5 @@
 import React from "react";
-import {Image, Text, View, StyleSheet} from "react-native";
+import {Image, Text, View, StyleSheet, Dimensions} from "react-native";
 
 const ReactLogo = () => {
 
@@ -7,35 +7,40 @@ const ReactLogo = () => {
         <View style={{alignItems: 'center'}}>
             <Image
                 style={[styles.image, styles.shadow]}
-                source={require('../../assets/pngaaa.com-3691859.png')}
+                source={require('../../assets/Doom-logo-big.png')}
             />
-            <Text style={[styles.text, styles.shadow]}>React Native</Text>
-            <Text style={[styles.text, styles.shadow]}>Rock Paper Scissors</Text>
+            <View height={Dimensions.get('window').height * 0.26}></View>
+            <Image
+                style={[styles.shadow, styles.rpsLogo]}
+                source={require('../../assets/RPS-logo-darker.png')}
+            />
+
         </View>
     )
 };
 
 const styles = StyleSheet.create({
     image: {
-        marginTop: 120,
+        marginTop: 20,
         overflow: 'visible',
-        height: 272,
-        width: 305
+        height: 220,
+        width: 300
     },
     text: {
         marginTop: 25,
-        fontSize: 40,
-        fontWeight: 'bold',
-        color: '#5fc4e4'
+        fontSize: 65,
+        fontFamily: 'EternalBattleBold',
+        color: 'rgba(255,255,255,0.89)'
     },
     shadow: {
-        shadowColor: '#000',
+        shadowColor: '#000000',
         shadowOffset: {
-            width: 4,
-            height: 4,
+            width: 7,
+            height: 7,
         },
-        shadowOpacity: 0.9,
-        shadowRadius: 1
+        shadowOpacity: 1,
+        shadowRadius: 1,
+        overflow: 'visible'
     }
 });
 

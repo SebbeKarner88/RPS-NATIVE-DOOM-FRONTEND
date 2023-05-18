@@ -23,16 +23,17 @@ const InputField = ({title, keyType, value, setValue, encrypted}) => {
 const styles = StyleSheet.create({
     text: {
         marginTop: 10,
-        fontSize: 20,
-        color: '#60c5e5'
+        fontSize: 22,
+        fontFamily: 'EternalUiRegular',
+        color: '#d20000'
     },
     input: {
         margin: 10,
         padding: 4,
         fontSize: 20,
-        color: '#fff',
+        color: '#797979',
         borderStyle: 'solid',
-        borderColor: '#60c5e5',
+        borderColor: '#d20000',
         borderWidth: 1,
         borderRadius: 7,
         width: 200

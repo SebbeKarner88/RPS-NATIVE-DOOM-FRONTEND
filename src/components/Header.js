@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
 
     container: {
         backgroundColor: 'rgba(0,0,0,0.54)',
-        borderBottomColor: 'rgb(96,197,229)',
+        borderBottomColor: 'rgba(190,190,190,0.24)',
         borderStyle: 'solid',
-        borderBottomWidth: 2,
+        borderBottomWidth: 4,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         flex: 1,
         flexDirection: 'row',
-        maxWidth: 200,
+        maxWidth: 220,
         marginRight: 20,
         justifyContent: 'space-between',
     }

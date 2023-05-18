@@ -23,13 +23,3 @@ const navigator = createStackNavigator(
 );
 
 export default createAppContainer(navigator);
-
-//title: "Rock Paper Scissors",
-//             headerStyle: {
-//                 backgroundColor: "rgb(0,0,0)",
-//             },
-//             headerTitleStyle: {
-//                 fontSize: 25,
-//                 color: "#71c6e1",
-//                 fontWeight: "bold",
-//             },

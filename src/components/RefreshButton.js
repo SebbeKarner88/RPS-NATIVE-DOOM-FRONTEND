@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     titleBox: {
         backgroundColor: 'rgba(0,0,0,0.51)',
         margin: 10,
-        width: 120,
+        width: 140,
         height: 'auto',
         padding: 10,
         borderRadius: 15,
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
 
     },
     title: {
-        fontSize: 20,
-        fontWeight: 'bold',
+        fontSize: 15,
+        fontFamily: 'EternalBattleBold',
         color: '#04a40c',
         letterSpacing: 1.5
     }

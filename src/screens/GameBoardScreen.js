@@ -111,7 +111,7 @@ const GameBoardScreen = ({navigation}) => {
                 width: Dimensions.get('window').width,
                 height: Dimensions.get('window').height
             }}
-            source={require('../../assets/background-grey.jpg')}>
+            source={require('../../assets/Doom-background.webp')}>
             <View>
                 <Header navigation={navigation}/>
                 <View>

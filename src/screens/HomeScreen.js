@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
 import {Dimensions, ImageBackground, View} from "react-native";
+import {useFonts} from "expo-font";
 import Header from '../components/Header';
 import ReactLogo from "../components/ReactLogo";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import IP_BASEURL from "../../services/IP Config";
+
 
 const getToken = async () => {
     try {
@@ -35,6 +37,12 @@ export const getData = async (key) => {
 
 const HomeScreen = ({navigation}) => {
 
+    const [loaded] = useFonts({
+        EternalBattleBold: require('../../assets/fonts/EternalBattleBold.ttf'),
+        EternalUiRegular: require('../../assets/fonts/EternalUiRegular.ttf')
+    });
+
+
 
     useEffect(() => {
        getToken().then( token => {
@@ -43,20 +51,24 @@ const HomeScreen = ({navigation}) => {
         })
     }, []);
 
-
+if (loaded) {
     return (
         <ImageBackground
             style={{
                 width: Dimensions.get('window').width,
                 height: Dimensions.get('window').height
             }}
-            source={require('../../assets/background-grey.jpg')}>
+            source={require('../../assets/Doom-background.webp')}>
             <View>
                 <Header navigation={navigation}/>
                 <ReactLogo/>
             </View>
         </ImageBackground>
     )
+}
+else{
+    return null;
+}
 };
 
 export default HomeScreen;

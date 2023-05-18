@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         padding: 5,
         borderRadius: 15,
         borderStyle: 'solid',
-        borderColor: '#60c5e5',
+        borderColor: '#d20000',
         borderWidth: 2,
         justifyContent: 'center',
         alignItems: 'center',
@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 10,
-        fontWeight: 'bold',
-        color: '#60c5e5',
+        fontFamily: 'EternalUiRegular',
+        color: '#d20000',
         letterSpacing: 1.5
 
     }

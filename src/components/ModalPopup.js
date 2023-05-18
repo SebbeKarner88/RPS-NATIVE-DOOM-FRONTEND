@@ -51,20 +51,21 @@ const styles = StyleSheet.create({
         padding: 25,
         borderRadius: 15,
         borderStyle: 'solid',
-        borderColor: '#60c5e5',
+        borderColor: '#d20000',
         borderWidth: 2
     },
     Button: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#5fc4e4',
+        fontSize: 16,
+        fontFamily: 'EternalBattleBold',
+        color: '#d20000',
         textAlign: 'center'
     },
     modText: {
         marginBottom: 15,
         textAlign: 'left',
-        color: 'white',
-        fontSize: 18
+        color: '#9d9d9d',
+        fontFamily: 'EternalUiRegular',
+        fontSize:20,
     },
     shadow: {
         shadowColor: '#000',

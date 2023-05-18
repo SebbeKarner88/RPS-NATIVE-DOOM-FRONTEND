@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
 
     },
     title: {
-        fontSize: 30,
-        fontWeight: 'bold',
+        fontSize: 20,
+        fontFamily: 'EternalBattleBold',
         color: '#04a40c',
         letterSpacing: 1.5
     }

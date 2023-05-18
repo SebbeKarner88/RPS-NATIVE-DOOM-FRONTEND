@@ -14,9 +14,9 @@ const NavButton = ({navigation, path, label}) => {
 
 const styles = StyleSheet.create({
     button: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#5fc4e4',
+        fontSize: 17,
+        fontFamily: 'EternalBattleBold',
+        color: '#d20000',
         shadowColor: '#000',
         shadowOffset: {
             width: 4,

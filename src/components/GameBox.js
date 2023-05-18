@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         padding: 5,
         borderRadius: 15,
         borderStyle: 'solid',
-        borderColor: '#60c5e5',
+        borderColor: '#a20000',
         borderWidth: 2,
         justifyContent: 'center',
         alignItems: 'center',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     opponent: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: '#60c5e5',
+        color: '#a20000',
     },
     gameCard: {
         flexDirection: 'row',
@@ -66,10 +66,10 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         borderWidth: 1,
         borderRadius: 5,
-        borderColor: "#5fc4e4",
+        borderColor: "#a20000",
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#5fc4e4',
+        color: '#a20000',
         padding: 5
     }
 });
