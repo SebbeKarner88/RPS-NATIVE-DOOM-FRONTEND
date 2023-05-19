@@ -130,7 +130,7 @@ const GameBoardScreen = ({navigation}) => {
                               }}/>
 
                         {result ? null :
-                            <Card image={require('../../assets/massiveGun.png')}
+                            <Card image={require('../../assets/massiveGun.webp')}
                                   handleMove={async () => {HandleMove(await getData('token'), 'scissors')
                                   }}/>}
                     </View>
