@@ -146,50 +146,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: "center"
-
     }
 });
 
 export default GameBoardScreen;
 
-
-//const handleNoMove = async () => {
-//         GameStatusFetch
-//             .then(async (res) => {
-//                 await MakeMoveFetch(res.playerTwo.userId, 'rock');
-//                 await MakeMoveFetch(res.playerOne.userId, 'rock');
-//             });
-//     }
-//         const handleOneMove = async (move, id) => {
-//             await GameStatusFetch.then(async (res) => {
-//                 switch (id) {
-//                     case res.playerOne.userId:
-//                         switch (move) {
-//                             case 'ROCK':
-//                                 await MakeMoveFetch(id, 'scissors');
-//                                 break;
-//                             case 'PAPER':
-//                                 await MakeMoveFetch(id, 'rock');
-//                                 break;
-//                             case 'SCISSORS':
-//                                 await MakeMoveFetch(id, 'paper');
-//                                 break;
-//                         }
-//                         break;
-//
-//                     case res.playerTwo.userId:
-//                         switch (move) {
-//                             case 'ROCK':
-//                                 await MakeMoveFetch(id, 'scissors');
-//                                 break;
-//                             case 'PAPER':
-//                                 await MakeMoveFetch(id, 'rock');
-//                                 break;
-//                             case 'SCISSORS':
-//                                 await MakeMoveFetch(id, 'paper');
-//                                 break;
-//                         }
-//                         break;
-//                 }
-//             });
-//         };
+// ROCK = CHAINSAW
+// PAPER = PLASMAGUN
+// SCISSORS = MASSIVEGUN
