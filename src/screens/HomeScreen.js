@@ -64,7 +64,6 @@ const HomeScreen = ({navigation}) => {
         EternalBattleBold: require('../../assets/fonts/EternalBattleBold.ttf'),
         EternalUiRegular: require('../../assets/fonts/EternalUiRegular.ttf')
     });
-
     useEffect(() => {
         playSound();
        getToken().then( token => {
@@ -72,6 +71,7 @@ const HomeScreen = ({navigation}) => {
                .then();
         })
     }, []);
+
 
 if (loaded) {
     return (
