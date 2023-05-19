@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ImageBackground, View, StyleSheet} from "react-native";
+import {ImageBackground, View, StyleSheet, Image} from "react-native";
 import Header from "../components/Header";
 import TitleBox from "../components/TitleBox";
 import GameButton from "../components/GameButton";
@@ -121,16 +121,16 @@ const GameBoardScreen = ({navigation}) => {
                     </View>
                     <View style={styles.cardBox}>
                         {result ? null :
-                            <Card title={'ROCK'}
+                            <Card image={require('../../assets/Doom-chainsaw.webp')}
                                   handleMove={async () => {HandleMove(await getData('token'), 'rock')
                                   }}/>}
 
-                        <Card title={result ? playerMove : 'PAPER'}
+                        <Card image={require('../../assets/Doom-plasmagun.webp')}
                               handleMove={async () => {HandleMove(await getData('token'), 'paper')
                               }}/>
 
                         {result ? null :
-                            <Card title={'SCISSORS'}
+                            <Card image={require('../../assets/massiveGun.png')}
                                   handleMove={async () => {HandleMove(await getData('token'), 'scissors')
                                   }}/>}
                     </View>

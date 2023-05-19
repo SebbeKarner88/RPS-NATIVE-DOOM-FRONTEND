@@ -1,13 +1,13 @@
 import React from "react";
-import {StyleSheet, Text, View, TouchableOpacity} from "react-native";
+import {StyleSheet, Text, View, TouchableOpacity, Image} from "react-native";
 
-const Card = ({title, handleMove}) => {
+const Card = ({image, handleMove, style}) => {
 
     return (
         <TouchableOpacity onPress={handleMove}>
             <View style={{alignItems: 'center'}}>
                 <View style={styles.card}>
-                    <Text style={styles.title}>{title}</Text>
+                    <Image resizeMode="cover" style={styles.image} source={image}/>
                 </View>
             </View>
         </TouchableOpacity>
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
             height: 6,
         },
         shadowOpacity: 0.9,
-        shadowRadius: 2
+        shadowRadius: 2,
+        elevation:5,
 
     },
     title: {
@@ -43,6 +44,14 @@ const styles = StyleSheet.create({
         color: '#d20000',
         letterSpacing: 1.5
 
+    },
+    image: {
+        flex:1,
+        transform: [{rotate: '90deg'}],
+        height: 200,
+        width:140,
+        overflow: 'visible',
+        resizeMode: 'contain'    
     }
 });
 
