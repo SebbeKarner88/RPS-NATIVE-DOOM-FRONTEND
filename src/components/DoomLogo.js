@@ -14,7 +14,6 @@ const DoomLogo = () => {
                 style={[styles.logo]}
                 source={require('../../assets/RPS-gradient.png')}
             />
-
         </View>
     )
 };
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
         marginTop: 20,
         overflow: 'visible',
         height: 220,
-        width: 300
+        width: 340
     },
     text: {
         marginTop: 25,
@@ -33,7 +32,7 @@ const styles = StyleSheet.create({
         color: 'rgba(255,255,255,0.89)'
     },
     logo: {
-        height: 80,
+        height: 100,
         width: 150,
         overflow: "visible"
     },
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 1,
-
     }
 });
 

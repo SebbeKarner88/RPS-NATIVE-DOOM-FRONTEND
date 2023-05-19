@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 30,
         fontFamily: 'EternalBattleBold',
-        color: '#606060',
+        color: '#a4a4a4',
         letterSpacing: 1.5
 
     }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Dimensions, ImageBackground, View, StyleSheet} from "react-native";
+import {ImageBackground, View, StyleSheet} from "react-native";
 import Header from "../components/Header";
 import TitleBox from "../components/TitleBox";
 import GameButton from "../components/GameButton";
@@ -49,7 +49,6 @@ const GameBoardScreen = ({navigation}) => {
     const [playerMove, setPlayerMove] = useState('');
     const [result, setResult] = useState('');
     const [timer, setTimer] = useState(30);
-    const [madeMove, setMadeMove] = useState(false);
 
     let time = 30;
 
@@ -109,8 +108,7 @@ const GameBoardScreen = ({navigation}) => {
     return (
         <ImageBackground
             style={{
-                width: Dimensions.get('window').width,
-                height: Dimensions.get('window').height
+                flex:1
             }}
             source={require('../../assets/Doom-background.webp')}>
             <View>

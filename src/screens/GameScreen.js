@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Dimensions, ImageBackground, StyleSheet, TouchableOpacity, FlatList} from "react-native";
+import {View, ImageBackground, StyleSheet, TouchableOpacity, FlatList} from "react-native";
 import Header from "../components/Header";
 import GameButton from "../components/GameButton";
 import TitleBox from "../components/TitleBox";
@@ -81,8 +81,7 @@ const GameScreen = ({navigation}) => {
     return (
         <ImageBackground
             style={{
-                width: Dimensions.get('window').width,
-                height: Dimensions.get('window').height
+                flex:1
             }}
             source={require('../../assets/Doom-background.webp')}>
             <View>
