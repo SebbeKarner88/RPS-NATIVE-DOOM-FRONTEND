@@ -9,6 +9,7 @@ const Header = ({navigation}) => {
     const modalText = `This App is created by: 
 
 
+
 `
 
     return (

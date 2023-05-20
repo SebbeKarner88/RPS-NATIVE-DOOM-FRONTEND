@@ -105,10 +105,21 @@ const GameBoardScreen = ({navigation}) => {
             .then(async () => console.log('Made move!!!'));
     };
 
+    const HandleWeaponPlayer = (playerMove) => {
+        switch (playerMove) {
+            case 'ROCK':
+                return require('../../assets/Doom-chainsaw.webp');
+            case 'PAPER':
+                return require('../../assets/Doom-plasmagun.webp');
+            case 'SCISSORS':
+                return require('../../assets/massiveGun.webp');
+        }
+    }
+
     return (
         <ImageBackground
             style={{
-                flex:1
+                flex: 1
             }}
             source={require('../../assets/Doom-background.webp')}>
             <View>
@@ -122,16 +133,22 @@ const GameBoardScreen = ({navigation}) => {
                     <View style={styles.cardBox}>
                         {result ? null :
                             <Card image={require('../../assets/Doom-chainsaw.webp')}
-                                  handleMove={async () => {HandleMove(await getData('token'), 'rock')
+                                  handleMove={async () => {
+                                      await HandleMove(await getData('token'), 'rock')
                                   }}/>}
 
-                        <Card image={require('../../assets/Doom-plasmagun.webp')}
-                              handleMove={async () => {HandleMove(await getData('token'), 'paper')
-                              }}/>
+                        {result ? <Card image={HandleWeaponPlayer(playerMove)}
+                                        handleMove={() => {
+                                        }}/> :
+                            <Card image={require('../../assets/Doom-plasmagun.webp')}
+                                  handleMove={async () => {
+                                      await HandleMove(await getData('token'), 'paper')
+                                  }}/>}
 
                         {result ? null :
                             <Card image={require('../../assets/massiveGun.webp')}
-                                  handleMove={async () => {HandleMove(await getData('token'), 'scissors')
+                                  handleMove={async () => {
+                                      await HandleMove(await getData('token'), 'scissors')
                                   }}/>}
                     </View>
                 </View>
