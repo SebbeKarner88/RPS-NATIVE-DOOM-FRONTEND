@@ -1,10 +1,10 @@
 import React from "react";
 import {StyleSheet, View, TouchableOpacity, Image} from "react-native";
 
-const Card = ({image, handleMove}) => {
+const MonsterCard = ({image}) => {
 
     return (
-        <TouchableOpacity onPress={handleMove}>
+        <TouchableOpacity>
             <View style={{alignItems: 'center'}}>
                 <View style={styles.card}>
                     <Image resizeMode="cover" style={styles.image} source={image}/>
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.51)',
         marginVertical: 40,
         marginHorizontal: 10,
-        width: 110,
+        width: 180,
         height: 180,
         padding: 5,
         borderRadius: 15,
@@ -41,10 +41,9 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 200,
         width: 140,
-        transform: [{rotate: '90deg'}],
         overflow: 'visible',
         resizeMode: 'contain'
     },
 });
 
-export default Card;
+export default MonsterCard;

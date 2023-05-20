@@ -6,6 +6,7 @@ import GameButton from "../components/GameButton";
 import Card from "../components/Card";
 import {getData} from "./HomeScreen";
 import IP_BASEURL from "../../services/IP Config";
+import MonsterCard from "../components/MonsterCard";
 
 const GameStatusFetch = async () => {
     try {
@@ -105,6 +106,17 @@ const GameBoardScreen = ({navigation}) => {
             .then(async () => console.log('Made move!!!'));
     };
 
+    const HandleMonsterOpponent = (opponentMove) => {
+        switch (opponentMove) {
+            case 'ROCK':
+                return require('../../assets/monster1.webp');
+            case 'PAPER':
+                return require('../../assets/monster2.webp');
+            case 'SCISSORS':
+                return require('../../assets/monster3.webp');
+        }
+    }
+
     const HandleWeaponPlayer = (playerMove) => {
         switch (playerMove) {
             case 'ROCK':
@@ -121,9 +133,9 @@ const GameBoardScreen = ({navigation}) => {
             case 'WIN':
                 return 'YOU WIN';
             case 'DRAW':
-                return 'Wounded, but alive!';
+                return 'WOUNDED';
             case 'LOSE':
-                return 'YOU DIED!';
+                return 'YOU DIED';
         }
     }
 
@@ -136,28 +148,35 @@ const GameBoardScreen = ({navigation}) => {
             <View>
                 <Header navigation={navigation}/>
                 <View>
-                    <TitleBox title={result ? oppMove : opponent}/>
-                    <GameButton title={timer}/>
-                    <View height={150}>
+                    <TitleBox title={opponent}/>
+                    {result ? <View height={80}></View> : <GameButton title={timer}/>}
+                    <View height={150} style={[styles.cardBox, styles.cardBoxOpponent]}>
+
+                        {result ? <MonsterCard image={HandleMonsterOpponent(oppMove)}/>
+                            : <View height={150}></View>}
 
                     </View>
                     <View style={styles.cardBox}>
                         {result ? null :
                             <Card image={require('../../assets/Doom-chainsaw.webp')}
+                                  rotate={true}
                                   handleMove={async () => {
                                       await HandleMove(await getData('token'), 'rock')
                                   }}/>}
 
                         {result ? <Card image={HandleWeaponPlayer(playerMove)}
+                                        rotate={true}
                                         handleMove={() => {
                                         }}/> :
                             <Card image={require('../../assets/Doom-plasmagun.webp')}
+                                  rotate={true}
                                   handleMove={async () => {
                                       await HandleMove(await getData('token'), 'paper')
                                   }}/>}
 
                         {result ? null :
                             <Card image={require('../../assets/massiveGun.webp')}
+                                  rotate={true}
                                   handleMove={async () => {
                                       await HandleMove(await getData('token'), 'scissors')
                                   }}/>}
@@ -174,6 +193,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: "center"
+    },
+    cardBoxOpponent: {
+        paddingTop: 30
     }
 });
 
