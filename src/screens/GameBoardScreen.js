@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {ImageBackground, View, StyleSheet, Image} from "react-native";
+import {ImageBackground, View, StyleSheet} from "react-native";
 import Header from "../components/Header";
 import TitleBox from "../components/TitleBox";
 import GameButton from "../components/GameButton";
@@ -116,6 +116,17 @@ const GameBoardScreen = ({navigation}) => {
         }
     }
 
+    const HandleResultMessage = (result) => {
+        switch (result) {
+            case 'WIN':
+                return 'YOU WIN';
+            case 'DRAW':
+                return 'Wounded, but alive!';
+            case 'LOSE':
+                return 'YOU DIED!';
+        }
+    }
+
     return (
         <ImageBackground
             style={{
@@ -152,7 +163,7 @@ const GameBoardScreen = ({navigation}) => {
                                   }}/>}
                     </View>
                 </View>
-                <TitleBox title={result ? result : player}/>
+                <TitleBox title={result ? HandleResultMessage(result) : player}/>
             </View>
         </ImageBackground>
     )
