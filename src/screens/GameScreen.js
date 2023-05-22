@@ -102,6 +102,8 @@ const GameScreen = ({navigation}) => {
             <View>
 
                 <Header navigation={navigation}/>
+                <View style={styles.rulesContainer}>
+                </View>
 
                 <TitleBox title={'Create Game'}/>
 
