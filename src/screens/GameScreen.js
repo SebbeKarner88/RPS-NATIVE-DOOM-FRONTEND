@@ -9,13 +9,17 @@ import RefreshButton from "../components/RefreshButton";
 import IP_BASEURL from "../../services/IP Config";
 import ModalPopup from '../components/ModalPopup';
 
-const ruleText = `The Doom is near. It's time to step up the game and kill some monsters. Your weapon of choice is critical for your fait:
+const ruleText = `THE DOOM IS NEAR... 
+
+It's time to step up the game and kill some monsters. 
+
+Your weapon of choice is critical for your faith:
+
     Chainsaw kills Mancubus 
     Plasmagun kills Arche-vile
     Gatling gun kills Cacodemon
     
     Good luck and have fun!
-    
 `
 
 const JoinGameFetch = async (gameId) => {
@@ -98,7 +102,6 @@ const GameScreen = ({navigation}) => {
 
                 <Header navigation={navigation}/>
                 <View style={styles.rulesContainer}>
-                <ModalPopup title={'Rules'} text={ruleText}/>
                 </View>
 
                 <TitleBox title={'Create Game'}/>
@@ -107,6 +110,7 @@ const GameScreen = ({navigation}) => {
                     <TouchableOpacity disabled>
                         <GameButton title={'1 P'}/>
                     </TouchableOpacity>
+                    <ModalPopup title={'Rules'} text={ruleText}/>
                     <TouchableOpacity onPress={() => handleStartGame()}>
                         <GameButton title={'2 P'}/>
                     </TouchableOpacity>
@@ -135,10 +139,8 @@ const styles = StyleSheet.create({
     gameTypeBox: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-evenly'
-    },
-    rulesContainer: {
-        marginTop: 10,
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
     }
 })
 
