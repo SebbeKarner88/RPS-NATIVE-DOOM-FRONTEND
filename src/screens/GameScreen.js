@@ -8,6 +8,7 @@ import GameBox from "../components/GameBox";
 import RefreshButton from "../components/RefreshButton";
 import IP_BASEURL from "../../services/IP Config";
 import ModalPopup from '../components/ModalPopup';
+import NavButton from "../components/NavButton";
 
 const ruleText = `THE DOOM IS NEAR... 
 
@@ -33,7 +34,7 @@ const JoinGameFetch = async (gameId) => {
             },
         })
             .then((response) => response.json())
-    }catch (e) {
+    } catch (e) {
         console.log(e.message)
     }
 }
@@ -48,7 +49,7 @@ const CreateGameFetch = async () => {
             },
         })
             .then((response) => response.json())
-    }catch (e) {
+    } catch (e) {
     }
 }
 
@@ -58,7 +59,7 @@ const OpenGamesFetch = async () => {
             method: "GET",
         })
             .then((response) => response.json())
-    }catch (e) {
+    } catch (e) {
     }
 }
 
@@ -69,7 +70,7 @@ const GameScreen = ({navigation}) => {
 
     const handleStartGame = async () => {
         await CreateGameFetch()
-            .then( (res) => {
+            .then((res) => {
                 storeData('gameId', res.gameStatusId);
                 navigation.navigate('GameBoard');
             })
@@ -78,13 +79,13 @@ const GameScreen = ({navigation}) => {
     const handleJoin = async (gameId) => {
         await JoinGameFetch(gameId)
             .then(() => {
-                storeData('gameId',gameId);
+                storeData('gameId', gameId);
                 navigation.navigate('GameBoard');
             });
     };
 
     useEffect(() => {
-         OpenGamesFetch()
+        OpenGamesFetch()
             .then((game) => {
                 setOpenGames(game);
             })
@@ -95,7 +96,7 @@ const GameScreen = ({navigation}) => {
     return (
         <ImageBackground
             style={{
-                flex:1
+                flex: 1
             }}
             source={require('../../assets/Doom-background.webp')}>
             <View>
@@ -108,7 +109,10 @@ const GameScreen = ({navigation}) => {
                     <TouchableOpacity disabled>
                         <GameButton title={'1 P'}/>
                     </TouchableOpacity>
-                    <ModalPopup title={'Rules'} text={ruleText}/>
+                    <View style={{display: 'flex'}}>
+                        <ModalPopup title={'Rules'} text={ruleText}/>
+                        <NavButton label={'Hi-Score'} navigation={navigation} path={'HighScore'}/>
+                    </View>
                     <TouchableOpacity onPress={() => handleStartGame()}>
                         <GameButton title={'2 P'}/>
                     </TouchableOpacity>
@@ -126,7 +130,7 @@ const GameScreen = ({navigation}) => {
                         keyExtractor={item => item.gameStatusId}
                         renderItem={({item}) =>
                             <GameBox opponent={item.playerOne.username} joinGame={() => handleJoin(item.gameStatusId)}/>
-                    }/>
+                        }/>
                 </View>
             </View>
         </ImageBackground>
