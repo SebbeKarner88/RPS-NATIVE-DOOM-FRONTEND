@@ -10,7 +10,6 @@ import InputField from './InputField';
 import FuncButton from './FuncButton';
 import { getData, storeData } from '../screens/HomeScreen';
 import IP_BASEURL from '../../services/IP Config';
-import Modal from './ModalPopup';
 
 const LoginFetch = async (username, password) => {
   try {
@@ -78,14 +77,14 @@ const LoginBox = ({ loggedIn }) => {
         <View style={styles.inputBox}>
           <InputField
             title='Enter your Username'
-            keyType={'text'}
+            keyType={'default'}
             encrypted={false}
             value={username}
             setValue={setUsername}
           />
           <InputField
             title='Enter your password'
-            keyType={'text'}
+            keyType={'default'}
             encrypted={true}
             value={password}
             setValue={setPassword}
