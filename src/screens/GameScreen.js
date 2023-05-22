@@ -97,7 +97,9 @@ const GameScreen = ({navigation}) => {
             <View>
 
                 <Header navigation={navigation}/>
+                <View style={styles.rulesContainer}>
                 <ModalPopup title={'Rules'} text={ruleText}/>
+                </View>
 
                 <TitleBox title={'Create Game'}/>
 
@@ -134,6 +136,9 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly'
+    },
+    rulesContainer: {
+        marginTop: 10,
     }
 })
 
