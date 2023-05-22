@@ -6,9 +6,9 @@ import ModalPopup from "./ModalPopup";
 
 const Header = ({navigation}) => {
 
-    const modalText = `This App is created by: 
-
-
+    const modalText = ` Beepity Baapity Group is a company that does magic with code.
+     The company has three people at this time in different places in Sweden.
+    Our motto is "How hard can it be, it's just beepity baapity". 
 
 `
 

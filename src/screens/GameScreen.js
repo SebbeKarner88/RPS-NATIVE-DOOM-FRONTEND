@@ -7,6 +7,16 @@ import {getData, storeData} from "./HomeScreen";
 import GameBox from "../components/GameBox";
 import RefreshButton from "../components/RefreshButton";
 import IP_BASEURL from "../../services/IP Config";
+import ModalPopup from '../components/ModalPopup';
+
+const ruleText = `The Doom is near. It's time to step up the game and kill some monsters. Your weapon of choice is critical for your fait:
+    Chainsaw kills Mancubus 
+    Plasmagun kills Arche-vile
+    Gatling gun kills Cacodemon
+    
+    Good luck and have fun!
+    
+`
 
 const JoinGameFetch = async (gameId) => {
     try {
@@ -87,6 +97,7 @@ const GameScreen = ({navigation}) => {
             <View>
 
                 <Header navigation={navigation}/>
+                <ModalPopup title={'Rules'} text={ruleText}/>
 
                 <TitleBox title={'Create Game'}/>
 
