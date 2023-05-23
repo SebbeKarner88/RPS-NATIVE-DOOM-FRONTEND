@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
         marginTop: 20,
         overflow: 'visible',
         height: 220,
-        width: 340
+        width: 340,
+        
     },
     text: {
         marginTop: 25,
@@ -44,6 +45,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 1,
         shadowRadius: 1,
+        
     }
 });
 

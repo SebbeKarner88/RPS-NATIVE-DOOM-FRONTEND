@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {View, StyleSheet, Keyboard, TouchableWithoutFeedback} from "react-native";
 import NavButton from "./NavButton";
 import HeaderLogo from "./HeaderLogo";
 import ModalPopup from "./ModalPopup";
+import { getData } from '../screens/HomeScreen';
+
 
 const Header = ({navigation}) => {
+
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        getData('username').then(setLoggedIn(true));
+
+    },[getData('username')])
 
     const modalText = `Beepity Baapity Group is a company that does magic with code.
     
@@ -26,7 +35,9 @@ Our motto is "How hard can it be, it's just beepity baapity".
                     style={styles.navbar}>
                     <ModalPopup title={'About'} text={modalText}/>
                     <NavButton navigation={navigation} path={'Game'} label={'Game'}/>
-                    <NavButton navigation={navigation} path={'Login'} label={'Login'}/>
+                    { loggedIn ? <NavButton navigation={navigation} path={'Login'} label={'Logout'}/> :
+                     <NavButton navigation={navigation} path={'Login'} label={'Login'}/> 
+                    }
                 </View>
             </View>
         </TouchableWithoutFeedback>
@@ -48,9 +59,8 @@ const styles = StyleSheet.create({
         marginTop: 30,
         flex: 1,
         flexDirection: 'row',
-        maxWidth: 220,
         marginRight: 20,
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
     }
 });
 
