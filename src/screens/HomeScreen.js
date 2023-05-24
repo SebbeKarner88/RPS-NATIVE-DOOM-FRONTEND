@@ -45,6 +45,7 @@ export const removeData = async (key) => {
 
 const HomeScreen = ({ navigation }) => {
   const [sound, setSound] = useState();
+  const [showing, setShowing] = useState(false);
 
   async function playSound() {
     console.log('Loading Sound');
@@ -70,10 +71,15 @@ const HomeScreen = ({ navigation }) => {
     EternalBattleBold: require('../../assets/fonts/EternalBattleBold.ttf'),
     EternalUiRegular: require('../../assets/fonts/EternalUiRegular.ttf'),
   });
+
   useEffect(() => {
     playSound();
-    getToken().then((token) => {
-      storeData('token', token).then();
+    getData('token').then((data) => {
+      if (!data) {
+        getToken().then((token) => {
+          storeData('token', token).then();
+        });
+      }
     });
   }, []);
 
