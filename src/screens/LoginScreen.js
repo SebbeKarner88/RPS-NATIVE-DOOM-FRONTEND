@@ -38,8 +38,9 @@ const LoginScreen = ({ navigation }) => {
           )}
           <LoginBox
             loggedIn={(username) => {
-              setLogin(true);
-              console.log(username);
+              /* setLogin(true);
+              console.log(username); */
+              navigation.navigate('UserPage');
             }}
           />
         </View>
