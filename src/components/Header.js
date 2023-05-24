@@ -35,7 +35,7 @@ Our motto is "How hard can it be, it's just beepity baapity".
                     style={styles.navbar}>
                     <ModalPopup title={'About'} text={modalText}/>
                     <NavButton navigation={navigation} path={'Game'} label={'Game'}/>
-                    { loggedIn ? <NavButton navigation={navigation} path={'Login'} label={'Logout'}/> :
+                    { loggedIn ? <NavButton navigation={navigation} path={'UserPage'} label={'Logout'}/> :
                      <NavButton navigation={navigation} path={'Login'} label={'Login'}/> 
                     }
                 </View>

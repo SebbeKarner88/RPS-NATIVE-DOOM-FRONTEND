@@ -6,6 +6,7 @@ import GameScreen from './src/screens/GameScreen';
 import GameBoardScreen from './src/screens/GameBoardScreen';
 import HighScoreScreen from './src/screens/HighScoreScreen';
 import GameBoardCPU from './src/screens/GameBoardCPUScreen';
+import UserpageScreen from './src/screens/UserpageScreen';
 
 const navigator = createStackNavigator(
   {
@@ -15,6 +16,7 @@ const navigator = createStackNavigator(
     GameBoard: GameBoardScreen,
     HighScore: HighScoreScreen,
     GameBoardCPU: GameBoardCPU,
+    UserPage: UserpageScreen,
   },
   {
     initialRouteName: 'Home',
