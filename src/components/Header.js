@@ -18,7 +18,7 @@ const Header = ({ navigation }) => {
     /* getData('username').then(setLoggedIn(true)); */
     getData('username')
       .then((res) => setUsername(res))
-      .then(console.log(username));
+      .then(() => console.log(username));
     if (username) setLoggedIn(true);
     if (!username) setLoggedIn(false);
   }, [username]);
@@ -38,15 +38,15 @@ Our motto is "How hard can it be, it's just beepity baapity".
         <View style={styles.navbar}>
           <ModalPopup title={'About'} text={modalText} />
           <NavButton navigation={navigation} path={'Game'} label={'Game'} />
-          {loggedIn ? (
-            <NavButton
+          {loggedIn ?
+              (<NavButton
               navigation={navigation}
               path={'UserPage'}
-              label={'Logout'}
+              label={'Profile'}
             />
-          ) : (
+              ):(
             <NavButton navigation={navigation} path={'Login'} label={'Login'} />
-          )}
+              )}
         </View>
       </View>
     </TouchableWithoutFeedback>
