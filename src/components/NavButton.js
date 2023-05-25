@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 
 const NavButton = ({ navigation, path, label }) => {
   return (
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.9,
     shadowRadius: 1,
-    elevation: 8,
+    elevation: Platform.OS === 'android' ? 8 : null,
   },
 });
 
