@@ -45,7 +45,6 @@ export const removeData = async (key) => {
 
 const HomeScreen = ({ navigation }) => {
   const [sound, setSound] = useState();
-  const [showing, setShowing] = useState(false);
 
   async function playSound() {
     console.log('Loading Sound');
