@@ -5,6 +5,7 @@ import { getData, removeData } from './HomeScreen';
 import Header from '../components/Header';
 import { TouchableWithoutFeedback } from 'react-native-web';
 import HighScoreItems from '../components/HighScoreItems';
+import { NavigationActions } from 'react-navigation';
 
 const AllGamesFetch = async () => {
   try {
@@ -27,6 +28,7 @@ const UserpageScreen = ({ navigation }) => {
   const handleLogout = () => {
     removeData('username');
     removeData('token');
+    navigation.reset([NavigationActions.navigate({ routeName: 'Home' })], 0);
     navigation.navigate('Home');
   };
 
