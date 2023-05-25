@@ -1,5 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Image,
+  Platform,
+} from 'react-native';
 
 const MonsterCard = ({ image }) => {
   return (

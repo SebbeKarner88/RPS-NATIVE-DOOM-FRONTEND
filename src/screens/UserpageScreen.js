@@ -114,3 +114,10 @@ export default UserpageScreen;
 //                     }
 //                 });
 //         }
+// ROCK = CHAINSAW
+// PAPER = PLASMAGUN
+// SCISSORS = MASSIVEGUN
+
+// ROCK = MONSTER 1
+// PAPER = MONSTER 2
+// SCISSORS = MONSTER 3

@@ -18,7 +18,6 @@ const GameBoardCPUScreen = ({ navigation }) => {
   const CPUmove = generateRandomNumber(1, 4);
   const [playerMove, setPlayerMove] = useState('');
   const [result, setResult] = useState('');
-  const [monsterSource, setMonsterSource] = useState('');
 
   function botChoice() {
     if (CPUmove === 1) {

@@ -75,10 +75,6 @@ const GameScreen = ({ navigation }) => {
     });
   };
 
-  /*   const handleStartCPUGame = () => {
-    navigation.navigate('GameBoardCPU');
-  }; */
-
   const handleJoin = async (gameId) => {
     await JoinGameFetch(gameId).then(() => {
       storeData('gameId', gameId);

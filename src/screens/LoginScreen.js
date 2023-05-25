@@ -38,9 +38,7 @@ const LoginScreen = ({ navigation }) => {
             <TitleBox title={'Login'} />
           )}
           <LoginBox
-            loggedIn={(username) => {
-              /* setLogin(true);
-              console.log(username); */
+            loggedIn={() => {
               navigation.reset(
                 [NavigationActions.navigate({ routeName: 'UserPage' })],
                 0

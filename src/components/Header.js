@@ -15,7 +15,6 @@ const Header = ({ navigation }) => {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    /* getData('username').then(setLoggedIn(true)); */
     getData('username')
       .then((res) => setUsername(res))
       .then(() => console.log(username));
@@ -38,15 +37,15 @@ Our motto is "How hard can it be, it's just beepity baapity".
         <View style={styles.navbar}>
           <ModalPopup title={'About'} text={modalText} />
           <NavButton navigation={navigation} path={'Game'} label={'Game'} />
-          {loggedIn ?
-              (<NavButton
+          {loggedIn ? (
+            <NavButton
               navigation={navigation}
               path={'UserPage'}
               label={'Profile'}
             />
-              ):(
+          ) : (
             <NavButton navigation={navigation} path={'Login'} label={'Login'} />
-              )}
+          )}
         </View>
       </View>
     </TouchableWithoutFeedback>

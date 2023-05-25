@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 
 const HighScoreItems = ({ playerName, opponentName, status }) => {
   return (
