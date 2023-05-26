@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Text, StyleSheet, FlatList, View } from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  FlatList,
+  View,
+  ImageBackground,
+} from 'react-native';
 import IP_BASEURL from '../../services/IP Config';
 import { getData, removeData } from './HomeScreen';
 import Header from '../components/Header';
@@ -24,6 +30,7 @@ const UserpageScreen = ({ navigation }) => {
   const [wins, setWins] = useState(0);
   const [draws, setDraws] = useState(0);
   const [losses, setLosses] = useState(0);
+  const [username, setUsername] = useState('');
 
   const handleLogout = () => {
     removeData('username');
@@ -59,6 +66,7 @@ const UserpageScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
+    setUsername(getData(username));
     AllGamesFetch().then((game) => {
       setAllGames(game);
     });
@@ -69,33 +77,63 @@ const UserpageScreen = ({ navigation }) => {
   }, [allGames]);
 
   return (
-    <View>
-      <Header navigation={navigation} />
+    <ImageBackground
+      style={{
+        flex: 1,
+      }}
+      source={require('../../assets/Doom-background.webp')}
+    >
       <View>
-        <TouchableWithoutFeedback>
-          <Text onPress={handleLogout}>Logout</Text>
-        </TouchableWithoutFeedback>
+        <Header navigation={navigation} />
+        <View style={styles.logoutContainer}>
+          <TouchableWithoutFeedback>
+            <Text style={styles.textContainer} onPress={handleLogout}>
+              Logout
+            </Text>
+          </TouchableWithoutFeedback>
+        </View>
+        <Text>
+          Wins: {wins} , Draws: {draws} , Losses: {losses}
+        </Text>
+        <FlatList
+          data={allGames}
+          keyExtractor={(item) => item.gameStatusId}
+          renderItem={({ item }) => {
+            return (
+              <HighScoreItems
+                playerName={item.playerOne.username}
+                opponentName={item.playerTwo.username}
+                status={item.gameStatus}
+              />
+            );
+          }}
+        />
       </View>
-      <Text>
-        Wins: {wins} , Draws: {draws} , Losses: {losses}
-      </Text>
-      <FlatList
-        data={allGames}
-        keyExtractor={(item) => item.gameStatusId}
-        renderItem={({ item }) => {
-          return (
-            <HighScoreItems
-              playerName={item.playerOne.username}
-              opponentName={item.playerTwo.username}
-              status={item.gameStatus}
-            />
-          );
-        }}
-      />
-    </View>
+    </ImageBackground>
   );
 };
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  logoutContainer: {
+    margin: 30,
+    borderWidth: 1,
+    borderColor: '#d20000',
+    borderRadius: 8,
+    width: '30%',
+    padding: 8,
+  },
+  textContainer: {
+    fontSize: 17,
+    fontFamily: 'EternalBattleBold',
+    color: '#d20000',
+    textAlign: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 4,
+      height: 4,
+    },
+    elevation: 8,
+  },
+});
 
 export default UserpageScreen;
 
