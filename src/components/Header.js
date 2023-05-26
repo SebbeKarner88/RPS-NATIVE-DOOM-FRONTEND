@@ -15,9 +15,7 @@ const Header = ({ navigation }) => {
   const [username, setUsername] = useState('');
 
   useEffect(() => {
-    getData('username')
-      .then((res) => setUsername(res))
-      .then(() => console.log(username));
+    getData('username').then((res) => setUsername(res));
     if (username) setLoggedIn(true);
     if (!username) setLoggedIn(false);
   }, [username]);

@@ -19,9 +19,7 @@ const getToken = async () => {
 
 export const storeData = async (key, value) => {
   try {
-    await AsyncStorage.setItem(key, value).then(() =>
-      console.log(key + ' : ' + value + ' saved.')
-    );
+    await AsyncStorage.setItem(key, value);
   } catch (e) {
     console.log(e.message());
   }
@@ -47,20 +45,16 @@ const HomeScreen = ({ navigation }) => {
   const [sound, setSound] = useState();
 
   async function playSound() {
-    console.log('Loading Sound');
     const { sound } = await Audio.Sound.createAsync(
       require('../../assets/music/AtDoomsGate.mp3')
     );
     setSound(sound);
-
-    console.log('Playing Sound');
     await sound.playAsync();
   }
 
   useEffect(() => {
     return sound
       ? () => {
-          console.log('Unloading Sound');
           sound;
         }
       : undefined;

@@ -106,7 +106,6 @@ const GameBoardCPUScreen = ({ navigation }) => {
                 image={require('../../assets/Doom-chainsaw.webp')}
                 handleMove={() => {
                   setPlayerMove('ROCK');
-                  console.log('rock');
                 }}
               />
             )}
@@ -121,7 +120,6 @@ const GameBoardCPUScreen = ({ navigation }) => {
                 image={require('../../assets/Doom-plasmagun.webp')}
                 handleMove={() => {
                   setPlayerMove('PAPER');
-                  console.log('paper');
                 }}
               />
             )}
@@ -132,7 +130,6 @@ const GameBoardCPUScreen = ({ navigation }) => {
                 rotate={true}
                 handleMove={() => {
                   setPlayerMove('SCISSORS');
-                  console.log('scissors');
                 }}
               />
             )}

@@ -32,7 +32,6 @@ const HighScoreScreen = ({ navigation }) => {
     setLosses(0);
 
     allGames.forEach((game) => {
-      console.log(game.gameStatus);
       if (game.gameStatus === 'WIN') {
         win++;
       }

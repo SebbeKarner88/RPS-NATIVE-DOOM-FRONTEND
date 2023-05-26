@@ -96,9 +96,7 @@ const GameBoardScreen = ({ navigation }) => {
   }, [opponent]);
 
   const HandleMove = async (token, move) => {
-    await MakeMoveFetch(token, move).then(async () =>
-      console.log('Made move!!!')
-    );
+    await MakeMoveFetch(token, move);
   };
 
   const HandleMonsterOpponent = (opponentMove) => {
