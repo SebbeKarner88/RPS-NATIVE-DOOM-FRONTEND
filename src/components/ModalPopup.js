@@ -28,9 +28,6 @@ const ModalPopup = ({ title, text, color }) => {
             <TouchableWithoutFeedback>
               <View style={[styles.modView, styles.shadow]}>
                 <Text style={styles.modText}>{text}</Text>
-                <TouchableOpacity onPress={() => setModal(!modal)}>
-                  <Text style={[styles.Button]}>Close</Text>
-                </TouchableOpacity>
               </View>
             </TouchableWithoutFeedback>
           </View>
@@ -73,7 +70,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   modText: {
-    marginBottom: 15,
     textAlign: 'left',
     color: '#9d9d9d',
     fontFamily: 'EternalUiRegular',
