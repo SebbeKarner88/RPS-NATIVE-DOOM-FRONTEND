@@ -84,18 +84,3 @@ const styles = StyleSheet.create({});
 
 export default HighScoreScreen;
 
-//  const CountStats = async () => {
-//             let token = await getData('token');
-//             allGames
-//                 .forEach(game => {
-//                     if (game.playerOne.userId === token) {
-//                         if (game.gameStatus === 'WIN') {
-//                             setWins(wins + 1);
-//                         } else if (game.gameStatus === 'DRAW') {
-//                             setDraws(draws + 1);
-//                         } else if (game.gameStatus === 'LOSE') {
-//                             setLosses(losses + 1);
-//                         }
-//                     }
-//                 });
-//         }

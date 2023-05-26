@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 
-const ModalPopup = ({ title, text }) => {
+const ModalPopup = ({ title, text, color }) => {
   const [modal, setModal] = useState(false);
   return (
     <View>
@@ -39,7 +39,7 @@ const ModalPopup = ({ title, text }) => {
 
       <TouchableOpacity>
         <Text
-          style={[styles.Button, styles.shadow]}
+          style={[styles.Button, styles.shadow, {color: color}]}
           onPress={() => setModal(true)}
         >
           {title}
@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
   Button: {
     fontSize: 16,
     fontFamily: 'EternalBattleBold',
-    color: '#d20000',
     textAlign: 'center',
   },
   modText: {

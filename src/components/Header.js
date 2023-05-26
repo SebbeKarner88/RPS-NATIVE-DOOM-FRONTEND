@@ -33,7 +33,7 @@ Our motto is "How hard can it be, it's just beepity baapity".
         <HeaderLogo style={styles.logo} navigation={navigation} path={'Home'} />
 
         <View style={styles.navbar}>
-          <ModalPopup title={'About'} text={modalText} />
+          <ModalPopup title={'About'} text={modalText} color={'#d20000'} />
           <NavButton navigation={navigation} path={'Game'} label={'Game'} />
           {loggedIn ? (
             <NavButton

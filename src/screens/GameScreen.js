@@ -14,7 +14,6 @@ import GameBox from '../components/GameBox';
 import RefreshButton from '../components/RefreshButton';
 import IP_BASEURL from '../../services/IP Config';
 import ModalPopup from '../components/ModalPopup';
-import NavButton from '../components/NavButton';
 
 const ruleText = `THE DOOM IS NEAR... 
 
@@ -99,7 +98,6 @@ const GameScreen = ({ navigation }) => {
     >
       <View>
         <Header navigation={navigation} />
-        <View style={styles.rulesContainer}></View>
 
         <TitleBox title={'Create Game'} />
 
@@ -107,18 +105,11 @@ const GameScreen = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.navigate('GameBoardCPU')}>
             <GameButton title={'1 P'} />
           </TouchableOpacity>
-          <View style={styles.ruleText}>
             <ModalPopup
               title={'Rules'}
               text={ruleText}
-              style={styles.ruleText}
+              color={'#c4c4c4'}
             />
-            <NavButton
-              label={'Hi-Score'}
-              navigation={navigation}
-              path={'HighScore'}
-            />
-          </View>
           <TouchableOpacity onPress={() => handleStartGame()}>
             <GameButton title={'2 P'} />
           </TouchableOpacity>
@@ -152,14 +143,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-  },
-  ruleText: {
-    display: 'flex',
-    height: 60,
-    marginTop: 30,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
+  }
 });
 
 export default GameScreen;

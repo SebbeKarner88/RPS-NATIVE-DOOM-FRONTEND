@@ -4,7 +4,6 @@ import HomeScreen from './src/screens/HomeScreen';
 import LoginScreen from './src/screens/LoginScreen';
 import GameScreen from './src/screens/GameScreen';
 import GameBoardScreen from './src/screens/GameBoardScreen';
-import HighScoreScreen from './src/screens/HighScoreScreen';
 import GameBoardCPU from './src/screens/GameBoardCPUScreen';
 import UserpageScreen from './src/screens/UserpageScreen';
 
@@ -14,7 +13,6 @@ const navigator = createStackNavigator(
     Game: GameScreen,
     Login: LoginScreen,
     GameBoard: GameBoardScreen,
-    HighScore: HighScoreScreen,
     GameBoardCPU: GameBoardCPU,
     UserPage: UserpageScreen,
   },
