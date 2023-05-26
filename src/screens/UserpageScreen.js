@@ -127,7 +127,7 @@ const UserpageScreen = ({navigation}) => {
                     </TouchableWithoutFeedback>
                 </View>
                 <RecentGamesTitle title={'Recent games'}/>
-                <View style={{height: 300}}>
+                <View style={{height: 350}}>
                     <FlatList
                         data={allGames}
                         showsVerticalScrollIndicator={false}
