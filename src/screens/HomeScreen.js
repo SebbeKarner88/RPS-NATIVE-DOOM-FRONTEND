@@ -49,12 +49,6 @@ const HomeScreen = ({ navigation }) => {
       require('../../assets/music/AtDoomsGate.mp3')
     );
     setSound(sound);
-    getData('music').then((data) => {
-      if (!data) {
-        storeData('music', 'true');
-        console.log('storeData music');
-      }
-    });
     await sound.playAsync();
   }
 
@@ -72,11 +66,7 @@ const HomeScreen = ({ navigation }) => {
   });
 
   useEffect(() => {
-    getData('music').then((data) => {
-      if (!data) {
-        playSound();
-      }
-    });
+    playSound();
     getData('token').then((data) => {
       if (!data) {
         getToken().then((token) => {
