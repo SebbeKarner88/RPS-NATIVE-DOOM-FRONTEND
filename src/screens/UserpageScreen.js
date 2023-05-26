@@ -85,7 +85,7 @@ const UserpageScreen = ({navigation}) => {
             }}
             source={require('../../assets/Doom-background.webp')}
         >
-            <View>
+            <View style={{alignItems: 'center'}}>
                 <Header navigation={navigation}/>
                 <View style={styles.playerCard}>
                     <PlayerCard
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
         margin: 30,
         borderWidth: 1,
         borderColor: '#d20000',
+        backgroundColor: 'rgba(0,0,0,0.62)',
         borderRadius: 8,
         width: '30%',
         padding: 8,

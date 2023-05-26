@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import {View, Text, StyleSheet, Platform, Dimensions} from 'react-native';
 
 const HighScoreItems = ({ playerName, opponentName, status }) => {
   return (
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1A5F7A',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '100%',
+    width: Dimensions.get('window').width * 0.9,
     elevation: Platform.OS === 'android' ? 8 : null,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 0 },
