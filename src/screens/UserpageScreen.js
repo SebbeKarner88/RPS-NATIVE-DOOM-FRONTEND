@@ -127,10 +127,11 @@ const UserpageScreen = ({navigation}) => {
                     </TouchableWithoutFeedback>
                 </View>
                 <RecentGamesTitle title={'Recent games'}/>
-                <View style={{height: 350}}>
+                <View style={{height: 110}}>
                     <FlatList
                         data={allGames}
-                        showsVerticalScrollIndicator={false}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
                         keyExtractor={(item) => item.gameStatusId}
                         renderItem={({item}) => {
                             return item.playerOne.userId === token ? (
