@@ -9,7 +9,7 @@ import {
 import Header from '../components/Header';
 import GameButton from '../components/GameButton';
 import TitleBox from '../components/TitleBox';
-import { getData, storeData } from './HomeScreen';
+import { getData, storeData } from '../../services/storage';
 import GameBox from '../components/GameBox';
 import RefreshButton from '../components/RefreshButton';
 import IP_BASEURL from '../../services/IP Config';
@@ -105,11 +105,7 @@ const GameScreen = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.navigate('GameBoardCPU')}>
             <GameButton title={'1 P'} />
           </TouchableOpacity>
-            <ModalPopup
-              title={'Rules'}
-              text={ruleText}
-              color={'#c4c4c4'}
-            />
+          <ModalPopup title={'Rules'} text={ruleText} color={'#c4c4c4'} />
           <TouchableOpacity onPress={() => handleStartGame()}>
             <GameButton title={'2 P'} />
           </TouchableOpacity>
@@ -143,7 +139,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-  }
+  },
 });
 
 export default GameScreen;

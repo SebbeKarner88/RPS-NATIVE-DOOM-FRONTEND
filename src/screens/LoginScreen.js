@@ -8,7 +8,6 @@ import {
 import Header from '../components/Header';
 import TitleBox from '../components/TitleBox';
 import LoginBox from '../components/LoginBox';
-import { getData } from '../screens/HomeScreen';
 import { NavigationActions } from 'react-navigation';
 
 const LoginScreen = ({ navigation }) => {

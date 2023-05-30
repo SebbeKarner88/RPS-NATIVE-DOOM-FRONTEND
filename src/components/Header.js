@@ -8,7 +8,7 @@ import {
 import NavButton from './NavButton';
 import HeaderLogo from './HeaderLogo';
 import ModalPopup from './ModalPopup';
-import { getData } from '../screens/HomeScreen';
+import { getData } from '../../services/storage';
 
 const Header = ({ navigation }) => {
   const [loggedIn, setLoggedIn] = useState(false);

@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import TitleBox from '../components/TitleBox';
 import GameButton from '../components/GameButton';
 import Card from '../components/Card';
-import { getData } from './HomeScreen';
+import { getData } from '../../services/storage';
 import IP_BASEURL from '../../services/IP Config';
 import MonsterCard from '../components/MonsterCard';
 

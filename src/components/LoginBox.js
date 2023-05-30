@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import InputField from './InputField';
 import FuncButton from './FuncButton';
-import { getData, storeData } from '../screens/HomeScreen';
+import { getData } from '../../services/storage';
 import IP_BASEURL from '../../services/IP Config';
 
 const LoginFetch = async (username, password) => {
