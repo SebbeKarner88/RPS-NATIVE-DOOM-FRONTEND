@@ -3,19 +3,9 @@ import { ImageBackground, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import Header from '../components/Header';
 import DoomLogo from '../components/DoomLogo';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import IP_BASEURL from '../../services/IP Config';
 import { Audio } from 'expo-av';
-
-const getToken = async () => {
-  try {
-    const response = await fetch(IP_BASEURL + '/user/token');
-    const json = await response.json();
-    return json.toString();
-  } catch (error) {
-    console.error(error);
-  }
-};
+import { getData } from '../../services/storage';
+import { getToken } from '../../services/rpsApi';
 
 const HomeScreen = ({ navigation }) => {
   const [sound, setSound] = useState();

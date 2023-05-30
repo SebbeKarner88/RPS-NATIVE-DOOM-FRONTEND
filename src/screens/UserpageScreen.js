@@ -14,18 +14,7 @@ import HighScoreItems from '../components/HighScoreItems';
 import { NavigationActions } from 'react-navigation';
 import PlayerCard from '../components/PlayerCard';
 import RecentGamesTitle from '../components/RecentGamesTitle';
-
-const AllGamesFetch = async () => {
-  try {
-    return fetch(IP_BASEURL + '/games/allGames', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        token: await getData('token'),
-      },
-    }).then((response) => response.json());
-  } catch (e) {}
-};
+import { AllGamesFetch } from '../../services/rpsApi';
 
 const UserpageScreen = ({ navigation }) => {
   const [allGames, setAllGames] = useState([]);

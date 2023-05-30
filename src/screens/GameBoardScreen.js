@@ -5,39 +5,8 @@ import TitleBox from '../components/TitleBox';
 import GameButton from '../components/GameButton';
 import Card from '../components/Card';
 import { getData } from '../../services/storage';
-import IP_BASEURL from '../../services/IP Config';
+import { GameStatusFetch, MakeMoveFetch } from '../../services/rpsApi';
 import MonsterCard from '../components/MonsterCard';
-
-const GameStatusFetch = async () => {
-  try {
-    return fetch(IP_BASEURL + '/games/gameID', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        token: await getData('token'),
-        gameId: await getData('gameId'),
-      },
-    }).then((response) => response.json());
-  } catch (e) {
-    console.log(e.message);
-  }
-};
-
-const MakeMoveFetch = async (token, sign) => {
-  try {
-    return fetch(IP_BASEURL + '/games/update', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        token: token,
-        gameId: await getData('gameId'),
-        sign: sign,
-      },
-    }).then((response) => response.json());
-  } catch (e) {
-    console.log(e.message);
-  }
-};
 
 const GameBoardScreen = ({ navigation }) => {
   const [player, setPlayer] = useState('');

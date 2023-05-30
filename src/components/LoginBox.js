@@ -8,37 +8,7 @@ import {
 } from 'react-native';
 import InputField from './InputField';
 import FuncButton from './FuncButton';
-import { getData } from '../../services/storage';
-import IP_BASEURL from '../../services/IP Config';
-
-const LoginFetch = async (username, password) => {
-  try {
-    return fetch(IP_BASEURL + '/user/update', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    }).then((response) => response.json());
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-const RegisterFetch = async (username, password) => {
-  try {
-    return fetch(IP_BASEURL + '/user/add', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        token: await getData('token'),
-      },
-      body: JSON.stringify({ username, password }),
-    }).then((response) => response.json());
-  } catch (e) {
-    console.error(e);
-  }
-};
+import { LoginFetch, RegisterFetch } from '../../services/rpsApi';
 
 const LoginBox = ({ loggedIn }) => {
   const [username, setUsername] = useState('');

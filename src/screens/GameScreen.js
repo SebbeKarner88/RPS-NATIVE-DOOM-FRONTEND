@@ -9,11 +9,15 @@ import {
 import Header from '../components/Header';
 import GameButton from '../components/GameButton';
 import TitleBox from '../components/TitleBox';
-import { getData, storeData } from '../../services/storage';
+import { storeData } from '../../services/storage';
 import GameBox from '../components/GameBox';
 import RefreshButton from '../components/RefreshButton';
-import IP_BASEURL from '../../services/IP Config';
 import ModalPopup from '../components/ModalPopup';
+import {
+  CreateGameFetch,
+  OpenGamesFetch,
+  JoinGameFetch,
+} from '../../services/rpsApi';
 
 const ruleText = `THE DOOM IS NEAR... 
 
@@ -28,47 +32,12 @@ Your weapon of choice is critical for your faith:
     Good luck and have fun!
 `;
 
-const JoinGameFetch = async (gameId) => {
-  try {
-    return fetch(IP_BASEURL + '/games/add', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        token: await getData('token'),
-        gameId: gameId,
-      },
-    }).then((response) => response.json());
-  } catch (e) {
-    console.log(e.message);
-  }
-};
-
-const CreateGameFetch = async () => {
-  try {
-    return fetch(IP_BASEURL + '/games/create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        token: await getData('token'),
-      },
-    }).then((response) => response.json());
-  } catch (e) {}
-};
-
-const OpenGamesFetch = async () => {
-  try {
-    return fetch(IP_BASEURL + '/games', {
-      method: 'GET',
-    }).then((response) => response.json());
-  } catch (e) {}
-};
-
 const GameScreen = ({ navigation }) => {
   const [refreshGames, setRefreshGames] = useState(false);
   const [openGames, setOpenGames] = useState([]);
 
-  const handleStartGame = async () => {
-    await CreateGameFetch().then((res) => {
+  const handleStartGame = () => {
+    CreateGameFetch().then((res) => {
       storeData('gameId', res.gameStatusId);
       navigation.navigate('GameBoard');
     });
