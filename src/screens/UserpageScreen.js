@@ -6,7 +6,6 @@ import {
   View,
   ImageBackground,
 } from 'react-native';
-import IP_BASEURL from '../../services/IP Config';
 import { getData, removeData } from '../../services/storage';
 import Header from '../components/Header';
 import { TouchableWithoutFeedback } from 'react-native-web';
