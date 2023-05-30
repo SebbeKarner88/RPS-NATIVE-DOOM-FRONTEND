@@ -61,8 +61,8 @@ const GameBoardScreen = ({ navigation }) => {
           setPlayer(res.playerTwo.username);
         }
 
-        if (player !== '' && opponent !== '') {
-          clearInterval(interval);
+        if (res.playerOne && res.playerTwo) {
+          return clearInterval(interval);
         }
       });
     }, 1000);
