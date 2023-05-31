@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 import Header from '../components/Header';
 import DoomLogo from '../components/DoomLogo';
 import { Audio } from 'expo-av';
-import { getData } from '../../services/storage';
+import { getData, storeData } from '../../services/storage';
 import { getToken } from '../../services/rpsApi';
 
 const HomeScreen = ({ navigation }) => {

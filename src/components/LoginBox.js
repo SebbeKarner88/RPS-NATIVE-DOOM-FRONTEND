@@ -9,6 +9,7 @@ import {
 import InputField from './InputField';
 import FuncButton from './FuncButton';
 import { LoginFetch, RegisterFetch } from '../../services/rpsApi';
+import { storeData } from "../../services/storage";
 
 const LoginBox = ({ loggedIn }) => {
   const [username, setUsername] = useState('');
