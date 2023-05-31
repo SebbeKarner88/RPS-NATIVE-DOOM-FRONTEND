@@ -1,4 +1,4 @@
-const IP = '188.149.239.81';
+const IP = '188.148.250.137';
 
 const IP_BASEURL = 'http://' + IP + ':8080';
 
