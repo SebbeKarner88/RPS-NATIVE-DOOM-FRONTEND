@@ -4,11 +4,11 @@ import {StyleSheet, Text, View} from "react-native";
 const GameButton = ({title}) => {
 
     return (
-            <View style={{alignItems: 'center'}}>
-                <View style={styles.titleBox}>
-                    <Text style={styles.title}>{title}</Text>
-                </View>
+        <View style={{alignItems: 'center'}}>
+            <View style={styles.titleBox}>
+                <Text style={styles.title}>{title}</Text>
             </View>
+        </View>
     )
 };
 

@@ -4,16 +4,16 @@ import {Dimensions, StyleSheet, Text, View} from "react-native";
 const PlayerCard = ({name, wins, draws, losses}) => {
 
     return (
-            <View style={{alignItems: 'center'}}>
-                <View style={styles.playerBox}>
-                    <Text style={styles.title}>{name}</Text>
-                    <Text style={styles.results}>Personal Highscore</Text>
-                    <Text style={styles.resultsWin}>Win: {wins}</Text>
-                    <Text style={styles.resultsDraw}>Draw: {draws}</Text>
-                    <Text style={styles.resultsLoss}>Loss: {losses}</Text>
+        <View style={{alignItems: 'center'}}>
+            <View style={styles.playerBox}>
+                <Text style={styles.title}>{name}</Text>
+                <Text style={styles.results}>Personal Highscore</Text>
+                <Text style={styles.resultsWin}>Win: {wins}</Text>
+                <Text style={styles.resultsDraw}>Draw: {draws}</Text>
+                <Text style={styles.resultsLoss}>Loss: {losses}</Text>
 
-                </View>
             </View>
+        </View>
     )
 };
 
